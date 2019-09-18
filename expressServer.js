@@ -37,6 +37,10 @@ app.get("/sayHello",function(request,reponse){
     reponse.end("Hello "+user_name+" !");
 });
 
+app.get('/signup',function(req,res){
+    res.render('signup');
+})
+
 app.listen(port);
 
 console.log("Listening on port",port);

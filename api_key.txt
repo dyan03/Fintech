@@ -1,0 +1,5 @@
+key:    l7xx6665f9b348f7499b9b78ad39999f5438
+secret key: 736da5f10fd54a2b848e3415a10f41c3
+auth token: c28e86ba-7d54-49aa-8ed0-8c28dc8e443b
+access token: 63a53e6d-22bc-4382-8172-3fab597cc632
+refresh token: 3c7de39f-24b8-4a9e-83ac-dbaabe49cdbe

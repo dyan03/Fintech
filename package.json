@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/dyan03/Fintech#readme",
   "dependencies": {
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "mysql": "github:mysqljs/mysql",
     "request": "^2.88.0",
