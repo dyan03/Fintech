@@ -1,0 +1,1695 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Components - Creating and Customizing Enabled's Mobile Template</title>
+
+	<meta name="description" content="">
+	<meta name="author" content="Enabled">
+	<meta name="copyright" content="Enabled">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2018-12-02T00:00:00+01:00">
+
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+
+
+	<script src="assets/js/jquery.js"></script>
+
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url();}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+
+</head>
+<body class="documenter-project-components">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+
+			<li><a href="#components" title="Components">Components</a></li>
+			<li><a href="#accordions" title="Accordions">Accordions</a></li>
+			<li><a href="#ad_boxes" title="Ad Boxes">Ad Boxes</a></li>
+			<li><a href="#add_to_home" title="Add to Home">Add to Home</a></li>
+			<li><a href="#back_to_top" title="Back to Top">Back to Top</a></li>
+			<li><a href="#captions_covers_walkthroughs" title="Captions / Covers / Walkthroughs">Captions / Covers / Walkthroughs</a></li>
+			<li><a href="#content_box_gradient_card" title="Content Box / Gradient Card">Content Box / Gradient Card</a></li>
+			<li><a href="#buttons_icons" title="Buttons & Icons">Buttons & Icons</a></li>
+			<li><a href="#carousels" title="Carousels">Carousels</a></li>
+			<li><a href="#charts_and_graphs" title="Charts and Graphs">Charts and Graphs</a></li>
+			<li><a href="#chips" title="Chips">Chips</a></li>
+			<li><a href="#columns" title="Columns">Columns</a></li>
+			<li><a href="#device_detection" title="Device Detection">Device Detection</a></li>
+			<li><a href="#dividers" title="Dividers">Dividers</a></li>
+			<li><a href="#dropdowns" title="Dropdowns">Dropdowns</a></li>
+			<li><a href="#header_logos" title="Header & Logos">Header & Logos</a></li>
+			<li><a href="#inputs" title="Inputs">Inputs</a></li>
+			<li><a href="#link_list" title="Link List">Link List</a></li>
+			<li><a href="#notifications_alerts" title="Notifications & Alerts">Notifications & Alerts</a></li>
+			<li><a href="#offline_detection" title="Offline Detection">Offline Detection</a></li>
+			<li><a href="#preloaders" title="Preloaders">Preloaders</a></li>
+			<li><a href="#pricing_tables" title="Pricing Tables">Pricing Tables</a></li>
+			<li><a href="#quotes_reviews" title="Quotes & Reviews">Quotes & Reviews</a></li>
+			<li><a href="#reading_progress" title="Reading Progress">Reading Progress</a></li>
+			<li><a href="#search" title="Search">Search</a></li>
+			<li><a href="#sharing" title="Sharing">Sharing</a></li>
+			<li><a href="#snackbars" title="Snackbars">Snackbars</a></li>
+			<li><a href="#tabs" title="Tabs">Tabs</a></li>
+			<li><a href="#toasts" title="Toasts">Toasts</a></li>
+			<li><a href="#toggles" title="Toggles">Toggles</a></li>
+			<li><a href="#typography" title="Typography">Typography</a></li>
+			<li><a href="#ending" title="Ending">Ending</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Enabled 2018<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a>
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Components</h1>
+	<h2>Creating and Customizing Enabled's Mobile Template</h2>
+	<div id="documenter_buttons">
+
+	</div>
+	<hr>
+	<ul>
+	
+	</ul>
+	<p></p>
+	</section>
+
+	<section id="components">
+	<div class="page-header"><h3>Components</h3><hr class="notop"></div>
+<p>
+	<strong>What are components?</strong></p>
+<p>
+	Components are elements you can simply copy and paste wherever you want, including a built page or a blank page to create a new page, improve one from the demo, or just to experiment with them.&nbsp;</p>
+<p>
+	<strong>Can I request more components?</strong></p>
+<p>
+	Of course. Let us know if you see something missing and we&#39;ll consider it for our next item update.&nbsp;</p>
+<p>
+	<strong>What if I need help with a component? Can you help me?</strong></p>
+<p>
+	We are always here for our customers! If you get stuck, just send us a message and we will gladly help you out! We&#39;re always here for you!&nbsp;</p>
+</section>
+<section id="accordions">
+	<div class="page-header"><h3>Accordions</h3><hr class="notop"></div>
+<p>
+	You can use endless accordions on one page, in multiple styles. They are easy and simple to use. Let&#39;s get started with them.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Creating a Basic Accordion&nbsp;</strong></p>
+<p>
+	A basic accordion has an icon on the left side, a text, and a icon that animates on the right side. When this is tapped it will show the content and add an effect to the right icon. Let&#39;s explain.&nbsp;</p>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content accordion-style-2&quot;&gt;
+    &lt;a data-accordion=&quot;accordion-content-1&quot; href=&quot;#&quot;&gt;
+        &lt;i class=&quot;accordion-icon-left fa fa-heart color-red1-light&quot;&gt;&lt;/i&gt;
+        Accordion Title 1
+        &lt;i class=&quot;accordion-icon-right fa fa-plus&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;p id=&quot;accordion-content-1&quot; class=&quot;accordion-content bottom-10&quot;&gt;
+        Accordion Content
+    &lt;/p&gt;
+
+    &lt;a href=&quot;#&quot; data-accordion=&quot;accordion-content-2&quot;&gt;
+        &lt;i class=&quot;accordion-icon-left fa fa-star color-yellow1-dark&quot;&gt;&lt;/i&gt;
+        Accordion Title 2
+        &lt;i class=&quot;accordion-icon-right fa fa-angle-down&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;p id=&quot;accordion-content-2&quot; class=&quot;accordion-content bottom-10&quot;&gt;
+        Accordion Content
+    &lt;/p&gt;
+
+    &lt;a href=&quot;#&quot; data-accordion=&quot;accordion-content-3&quot;&gt;
+       &lt;i class=&quot;accordion-icon-left fa fa-star color-yellow2-dark&quot;&gt;&lt;/i&gt;
+       Accordion Title 3
+       &lt;i class=&quot;accordion-icon-right fa fa-arrow-down&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;p id=&quot;accordion-content-3&quot; class=&quot;accordion-content bottom-10&quot;&gt;
+       Accordion Content
+    &lt;/p&gt;
+&lt;/div&gt; </pre>
+</div>
+<p>
+	Line 1 generates the accordion. The accordion must be wrapped inside a content class.<strong>&nbsp;</strong>To create an accordion without a background use&nbsp;<strong>accordion-style-2</strong> for the main class</p>
+<p>
+	Line 2 generates the accordion button. When you tap this it will activate the content. Notice that it uses&nbsp;<strong>data-accordion=&quot;accordion-content-1&quot;</strong>. The data-accordion must be a unique name for each individual accordion button.</p>
+<p>
+	Line 3 is the accordion left icon</p>
+<p>
+	Line 4 is the accordion text</p>
+<p>
+	Line 5 is the accordion right icon</p>
+<p>
+	Line 6 closes the accordion button</p>
+<p>
+	Line 7 is the accordion content. Notice that the&nbsp;<strong>id=&quot;accordion-content-1&quot;</strong> is the same value as the&nbsp;<strong>data-accordion=&quot;accordion-content-1&quot;</strong> it is very important that the accordion button and the content id are identical in name. This is how they know to find one another. Don&#39;t forget to add the&nbsp;<strong>accordion-content&nbsp;</strong>to this line. We used this with a paragraph, but you can house all the contnet inside a div.&nbsp;</p>
+<p>
+	Line 8 is the accordion content itself.</p>
+<p>
+	Line 9 closes the accordion content.</p>
+<p>
+	To create more accordion items, simply duplicate lines 1 to 9 and replace&nbsp;<strong>accordion-content-1</strong>&nbsp;both in the&nbsp;<strong>data-accordion</strong> and the&nbsp;<strong>id</strong> with unique names like in our code example above.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Creating a Background Accordion</strong></p>
+<p>
+	Let&#39;s use the code above as an example so as to not create confusion. Using the class&nbsp;<strong>accordion-style-2&nbsp;</strong>on line 1 creates a basic accordion, we covered that. If you use&nbsp;<strong>accordion-style-1</strong> that will create a set of paddings to adjust for a background accordion. So, on line 1 in the code above, we set&nbsp;<strong>accordion-style-1</strong></p>
+<p>
+	To add the background colors, just add the class <b>bg-VALUE-dark&nbsp;</b>or&nbsp;<strong>bg-VALUE-light</strong>&nbsp;to your accordion triggers. Meaning on lines&nbsp;<strong>2, 11 and 20</strong>. It&#39;s that simple!&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>How do I create a rounded accordion?</strong></p>
+<p>
+	To create a rounded accordion you must add the class&nbsp;<strong>accordion-toggle-first</strong> to your first accordion button and the class&nbsp;<strong>accordion-toggle-last</strong> to your last accordion button. In our code above,&nbsp;<strong>accordion-toggle-first&nbsp;</strong>would be added on line 2 and&nbsp;<strong>accordion-toggle-last</strong> would be added on line 20.&nbsp;</p>
+<p>
+	After you add the classes you can now add the accordion round property.&nbsp;</p>
+<p>
+	On line 1 add any of the following classes to set your accordion to be round</p>
+<p>
+	<strong>accordion-round-small -&nbsp;</strong>gives the first and last accordion toggles with a small rounded border</p>
+<p>
+	<strong>accordion-round-medium -&nbsp;</strong>gives the first and last accordion toggles with a medium rounded border</p>
+<p>
+	<strong>accordion-round-large -&nbsp;</strong>gives the first and last accordion toggles with a medium rounded border</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Can I use other styles of accordions as well?</strong></p>
+<p>
+	Yes! You can make any content an accordion. It&#39;s really simple. Use the following structure</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;
+    &lt;a href=&quot;#&quot; data-accordion=&quot;custom-accordion-1&quot;&gt;Accordion Trigger&lt;/a&gt;
+    &lt;div id=&quot;custom-accordion-1&quot; class=&quot;accordion-content&quot;&gt;
+        This is a custom accordion.
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div>
+	We used this structure to create the caption accordions in the demo page. If you add&nbsp;<strong>data-accordion=&quot;your-unique-number&quot;&nbsp;</strong>to any element and&nbsp;<strong>id=&quot;your-unique-number&quot; class=&quot;accordion-content&quot;&nbsp;</strong>it will automatically transform into an accordion.&nbsp;</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="ad_boxes">
+	<div class="page-header"><h3>Ad Boxes</h3><hr class="notop"></div>
+<p>
+	Ad boxes are designed and coded to match the better ads standards which are vital for mobile devices. We&#39;ve included</p>
+<p>
+	- 300x50 - Regular Mobile Banner</p>
+<p>
+	- 300x250 - Regular Mobile Banner</p>
+<p>
+	- 300x50 - Fixed Mobile Banner</p>
+<p>
+	You can find these in the component-ad html file. Just add your advertisement in their place and you&#39;re good to go!&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	You can also used fixed ad boxes. These will appear when you scroll down the page and hide automatically when you reach the bottom.</p>
+<div class="alert alert-error">
+	<span style="color: rgb(185, 74, 72); background-color: rgb(242, 222, 222);">Please note. The fixed scroll add must be added OUTSIDE the page-content class.</span></div>
+<p>
+	&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;scroll-ad&quot;&gt;
+        &lt;img src=&quot;images/pictures/28s.jpg&quot; class=&quot;shadow-medium&quot; alt=&quot;img&quot;&gt;
+        &lt;h1 class=&quot;uppercase ultrabold&quot;&gt;&lt;span class=&quot;color-highlight&quot;&gt;Eazy&lt;/span&gt;Mobile&lt;/h1&gt;
+        &lt;em&gt;Flexibile, fast and fully featured. &lt;br&gt; Pure mobile awesome!&lt;/em&gt;
+        &lt;a href=&quot;#&quot; class=&quot;bg-highlight color-white shadow-small&quot;&gt;Purchase&lt;/a&gt;
+    &lt;/div&gt;</pre>
+<div>
+	Replace the content inside the fixed ad with your own.&nbsp;</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="add_to_home">
+	<div class="page-header"><h3>Add to Home</h3><hr class="notop"></div>
+<p>
+	The Add to Home banner is designed and set to appear in the proper position on Android and iOS and also it will automatically detect and hide if launched from the home screen of the device.&nbsp;</p>
+<div class="alert alert-error">
+	This element must be placed outside of the page-content</div>
+<p>
+	Let&#39;s see the code&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;add-to-home&quot;&gt;
+    &lt;h1 class=&quot;uppercase bolder&quot;&gt;&lt;span class=&quot;color-highlight&quot;&gt;Eazy&lt;/span&gt;Mobile on  Home Screen&lt;/h1&gt;
+    &lt;p&gt;
+        Tap options and select &quot;Add to Home Screen&quot; It&#39;s that easy.
+    &lt;/p&gt;
+    &lt;img class=&quot;preload-image&quot; src=&quot;images/empty.png&quot; data-src=&quot;images/preload-logo.png&quot; alt=&quot;img&quot;&gt;
+    &lt;i class=&quot;fa fa-caret-up&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</pre>
+<div>
+	On line 2 we have the title of the banner and on line 4 we have the text. You can replace these with your own</div>
+<div>
+	On line 6 we have the image. This is preloaded to improve loading speed.&nbsp;</div>
+<div>
+	On line 7 we have an icon that will show the direction of the options menu.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	That&#39;s about it! To dismiss this box, simply tap it.</div>
+</section>
+<section id="back_to_top">
+	<div class="page-header"><h3>Back to Top</h3><hr class="notop"></div>
+<p>
+	The back to top badge is a nifty little effect you can add to all your pages. It will appear once you scrolled passed the header and automatically disapear when reaching the footer.</p>
+<p>
+	You can make any element go back to top by adding&nbsp;<strong>data-back-to-top</strong> to it or the class <strong>back-to-top</strong>. When the user taps it it will go back to top.&nbsp;</p>
+<div class="alert alert-error">
+	This element must be placed outside of the page-content</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<p>
+	<b>Back to Top Badge</b></p>
+<p>
+	This element will have an icon on the left side and a Back to Top Text. These appear in the center of the screen at the bottom.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+            &lt;a href=&quot;#&quot; class=&quot;back-to-top-badge bg-highlight shadow-medium&quot;&gt;
+                &lt;i class=&quot;fa fa-caret-up&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Back to Top&lt;/span&gt;
+            &lt;/a&gt;   </pre>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Back to Top Icon</strong></div>
+<div>
+	<p>
+		These elements are simple icons that will appear on the right bottom side of the screen.&nbsp;&nbsp;</p>
+</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;back-to-top-icon back-to-top-icon-circle bg-highlight shadow-medium&quot;&gt;
+    &lt;i class=&quot;fa fa-angle-up&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;</pre>
+	<div>
+		You can replace&nbsp;<strong>back-to-topicon-circle&nbsp;</strong>with&nbsp;<strong>back-to-top-icon-round&nbsp;</strong>or&nbsp;<strong>back-to-top-icon-square</strong>. You can also change the shadow of the element by using the shadow secondary classes and the background color by using the secondary classes of the item.&nbsp;</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="captions_covers_walkthroughs">
+	<div class="page-header"><h3>Captions / Covers / Walkthroughs</h3><hr class="notop"></div>
+<p>
+	With all our previous items this was the element that our customers used the most. And from your feedback we determined that you want to be able to customize captions to the extreme. That&#39;s why, with our current caption system, you can now customize each aspect of your caption.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Where can I use captions?</strong></p>
+<p>
+	We use captions in a tone of places! They&#39;re so versatile they can be used for anything like&nbsp;</p>
+<div>
+	- Coverpage Sliders</div>
+<div>
+	- Walkthroughts</div>
+<div>
+	- Splash Screens</div>
+<div>
+	- Login / Register / Forgot Screens</div>
+<div>
+	- Images with Captions on Them</div>
+<div>
+	&nbsp;</div>
+<div>
+	The system we built uses a single structure, that makes the code much more faster to load, less CSS and it&#39;s super easy to use. Let&#39;s explain.&nbsp;</div>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Caption Structure</strong></p>
+<p>
+	All captions share a comon code foundation strucutre. When you want to use a caption, this is the first thing you must add.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+    &lt;div data-height=&quot;150&quot; class=&quot;caption caption-margins round-medium shadow-large&quot;&gt;
+        &lt;!--Caption Type Goes Here--&gt;
+        &lt;div class=&quot;caption-overlay bg-black opacity-90&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;caption-bg bg-28&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;          </pre>
+<div>
+	Line 1 - Generates the caption itself. The parameter&nbsp;<strong>data-height=&quot;150&quot;</strong> allows you to set the height of the caption. Previously we used responsive images for this task, but if you had text at the top and resized, it would look bad. This version allows you to easily control the height.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	The&nbsp;<strong>data-height&nbsp;</strong>parameter is expressed in pixels. If you want your caption to be the entire size of the screen set it to&nbsp;<strong>data-height=&quot;cover&quot;</strong> . This will make it expand to the full size of the screen.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Also on Line 1 we have a few secondary classes that allow us to modify the border roundness, the margins and shadow.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<b>Making Captions Rounder</b>: use the secondary classes&nbsp;<strong>round-small / round-medium / round-large / round-huge</strong></div>
+<div>
+	<strong>Making Captions Full Width&nbsp;</strong>: to make captions full width simply remove the&nbsp;<strong>caption-margins</strong> class</div>
+<div>
+	<b>Giving Captions a Shadow</b>: use the secondary classes <b>shadow-small / shadow-medium / shadow-large&nbsp;</b></div>
+<div>
+	&nbsp;</div>
+<div>
+	Line 2: This is where you will place you actual content. We&#39;ll explain these bellow in&nbsp;<strong>Caption Type&nbsp;</strong></div>
+<div>
+	Line 3: Is the caption overlay, meaning, the background-color that appears over the image. You can use any secondary class for background-colors here and the opacity secondary class to reduce the background-color intensity</div>
+<div>
+	Line 4: Is the caption backgroudn image. You can find these in framework.css by searching for&nbsp;<strong>bg-28</strong> for example. Replace the images there with your own.&nbsp;</div>
+<div>
+	Line 5 closes the caption.</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Caption Types</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	Inside the &lt;!-- Caption Type Goes Here --&gt; you can add any of the following elements.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;caption-center&quot;&gt;
+    I will appear in the center of the Caption
+&lt;/div&gt;
+
+&lt;div class=&quot;caption-top top-20 left-20&quot;&gt;
+    I will appear 20 pixels from the top and left of the Caption
+&lt;/div&gt;
+
+&lt;div class=&quot;caption-bottom bottom-20 left-20&quot;&gt;
+    I will appear 20 pixels from the bottom and left of the Caption
+&lt;/div&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	As you can see from their names, captions can be set at the top, bottom and center, and you can also modify how far from the top or bottom they appear.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	You can use 1 caption or all 3 at the same time.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Inside each of the 3 caption types, caption-center / caption-bottom / caption-top you can add any element you want from our product.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>How versatile are your captions?&nbsp;</strong></div>
+<div>
+	Well, in all our previous products the following pages required code to position elements&nbsp;</div>
+<ul>
+	<li>
+		login and register and forgot page</li>
+	<li>
+		coverpage and walkthrough&nbsp;</li>
+	<li>
+		coming soon and 404 pages</li>
+</ul>
+<div>
+	All these pages and their pageapps required manual code to center them. Using our captions, we can add them without any extra code. Making them much more versatile, and easier to customzie for your needs.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<b>How can I make a Cover Slider or Walkthrough&nbsp;</b><strong>Using Captions?</strong></div>
+<div>
+	It&#39;s very, very easy. Let&#39;s show you an example.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;cover-slider owl-carousel bg-black&quot;&gt;
+
+    &lt;div data-height=&quot;cover&quot; class=&quot;caption&quot;&gt;
+        &lt;div class=&quot;caption-center&quot;&gt;
+            &lt;!-- Your content goes here --&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;caption-overlay bg-black opacity-70&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;caption-bg bg-28&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;</pre>
+	<div>
+		All you have to do, is take a caption code as seen in the first example, and use the&nbsp;<strong>data-height=&quot;cover&quot;</strong> to set it to full height. Now, you wrap the entire caption in the code you see on line 1.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		To create more cover / walkthrough slides, all you do is duplicate lines 3 to 9 in the code above, and replace your content and background image. It&#39;s that simple.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<b>I don&#39;t want a dark background. I want to use a CoverSlider like the Walkthrough Example. How do I do that?</b></div>
+	<div>
+		It&#39;s easy. just delete the following 2 lines from any caption.&nbsp;</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;caption-overlay bg-black opacity-70&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;caption-bg bg-28&quot;&gt;&lt;/div&gt;</pre>
+	<div>
+		By deleting these lines you are removing the overlay and the background-image, making the slider full screen and without a background image or overlay.</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>I got stuck. I don&#39;t know what to do...</strong></div>
+<div>
+	As we said before. Don&#39;t worry. Let us know if any of this is diffcult, we&#39;ll gladly help and update the documentatio if necessary.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="content_box_gradient_card">
+	<div class="page-header"><h3>Content Box / Gradient Card</h3><hr class="notop"></div>
+<p>
+	The content box is the most used element in our product. It serves to add a left and right margin so your content isn&#39;t stuck to the sides of the screen and automatically adds a bottom margin.&nbsp;</p>
+<p>
+	However, that being said, the content class can be used to generate gradient boxes as well and solid color boxes too. Let&#39;s explain&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>The basic Content Box</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content SECONDARY_CLASSES&quot;&gt;
+    &lt;!--Your Content Here--&gt;
+&lt;/div&gt; </pre>
+<p>
+	This is the most basic content box. It&#39;s used in all our product. It supports secondary classes to modify top, bottom, left or right margins and also to add shadows.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Creating a Solid Color Content Box or a Gradient Content Box</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;content content-box bg-green2-dark round-medium shadow-large&quot;&gt;
+        &lt;h4 class=&quot;color-white bold top-10&quot;&gt;Color Box&lt;/h4&gt;
+        &lt;p class=&quot;color-white bottom-10&quot;&gt;
+            This box is colored.
+        &lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	This will generate a content box, that is margined. Meaning, it will not expand to full width.&nbsp;</p>
+<p>
+	Line 1 Sets the margin of the content box so it&#39;s not full width. Delete this and line 8 if you want your box to expand to full width</p>
+<p>
+	Line 2 uses the following classes&nbsp;</p>
+<p>
+	- <strong>content content-box</strong> : for setting interior left and right margins.</p>
+<p>
+	- <strong>bg-green2-dark</strong>: is the secondary class for background color. Set it to whatever color you wish from the Secondary Classes chapter.</p>
+<p>
+	-&nbsp;<strong>round-medium:</strong> makes the box have round corners. If you plan on using the box in full width you can remove this element. You can change this to <b>round-small / round-large / round-huge</b></p>
+<p>
+	<strong>- shadow-large</strong>: adds a shadow to the box. You can replace this with&nbsp;<strong>shadow-small / shadow-medium</strong>&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<div>
+	&nbsp;</div>
+</section>
+<section id="buttons_icons">
+	<div class="page-header"><h3>Buttons & Icons</h3><hr class="notop"></div>
+<p>
+	When building buttons we always aim to give our users the most flexible and easy to use solution ever. That&#39;s why, we made the classes for buttons suit any scenario you would like to throw at them.&nbsp;</p>
+<p>
+	If you see a button with 5 secondary classes after it, don&#39;t get scared of the amount of code there. There&#39;s nothing to worry about and it&#39;s very simple to modify.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Button Class</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;button SECONDARY_CLASSES_HERE&quot;&gt;Button&lt;/a&gt;</pre>
+<p>
+	This is the basic button structure. Every button will have the class button attached to it. From this point on, you can define your button as you need it by adding secondary classes to it.&nbsp;</p>
+<p>
+	<b>Button Sizes:</b></p>
+<p>
+	We&#39;ve included the following sizes. Add any of the following classes to the button to change it&#39;s size.</p>
+<ul>
+	<li>
+		button-xxs</li>
+	<li>
+		button-xs&nbsp;</li>
+	<li>
+		button-s</li>
+	<li>
+		button-m</li>
+	<li>
+		button-l</li>
+	<li>
+		button-xl</li>
+	<li>
+		button-xxl</li>
+</ul>
+<p>
+	<strong>Button Colors</strong></p>
+<p>
+	Add any <b>bg-VALUE-light / bg-VALUE-dark</b>&nbsp;from the secondary classes here replacing value with the available colors.&nbsp;</p>
+<p>
+	<strong>Button Shape</strong></p>
+<p>
+	You can change the shape of your button From square to rounded or circled by using the following classes&nbsp;</p>
+<ul>
+	<li>
+		button-round-small</li>
+	<li>
+		button-round-medium</li>
+	<li>
+		button-round-large</li>
+	<li>
+		button-round-huge</li>
+	<li>
+		button-circle</li>
+</ul>
+<p>
+	<strong>Button Position</strong></p>
+<p>
+	We&#39;ve included a few positioning classes to help you aling your button or increase its size to full width.&nbsp;</p>
+<ul>
+	<li>
+		button-full - increases the button to full width</li>
+	<li>
+		button-center-small - centers button</li>
+	<li>
+		button-center-medium - centers button and makes it medium sized in width</li>
+	<li>
+		button-center-large - center button and makes it large sized in width&nbsp;</li>
+</ul>
+<p>
+	<strong>Shadows</strong></p>
+<p>
+	Use the secondary classes for shadows to create the button shadow, like&nbsp;<strong>shadow-small / shadow-medium / shadow-large</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>A real example</strong>.</p>
+<p>
+	Let&#39;s say you want to make a medium sized blue button, that&#39;s full width with rounded corners and a shadow added to it. Then you&#39;d have the following code&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;a class=&quot;button button-m bg-blue1-dark button-full button-round-medium shadow-large&quot;&gt;Button&lt;/a&gt;</pre>
+<p>
+	That&#39;s it! When creating a button, think about it as you were listing what you need from it. That list becomes the secondary classes you add.</p>
+<p>
+	Check the button component page. We added a tone of copy paste examples there.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>What about Icons?</strong></p>
+<p>
+	Icons work the same way as buttons.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;icon ICON-SIZE ICON-STYLE ICON-COLOR&quot;&gt;&lt;i class=&quot;fa fa-cog&quot;&gt;&lt;/i&gt;&lt;/a&gt; </pre>
+<p>
+	For <b>ICON-SIZE&nbsp;</b>you can use&nbsp;<strong>icon-xs / icon-s / icon-m / icon-l / icon-xl / icon-xxl</strong></p>
+<p>
+	For <b>ICON-STYLE</b> you can use&nbsp;<strong>icon-round / icon-square / icon-circle&nbsp;</strong></p>
+<p>
+	For <b>ICON-COLOR</b> you can use any color found in the Secondary Classes</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="carousels">
+	<div class="page-header"><h3>Carousels</h3><hr class="notop"></div>
+<p>
+	For carousels we are using the powerful <b>OwlCarousel</b> slider. This is a beautiful plugin with huge power and low weight. We love it and recommend using it due to its flexibility and small file size.&nbsp;</p>
+<p>
+	For our product, there are some pre-made sliders, that you can just copy and paste and replace the content inside with your own, the best example would be the homepage slider, but you can create your own image slider using the components in the pack, especially the Captions which are highly versatile.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Creating a Single Slider or a Double Slider</strong></p>
+<p>
+	To create a single slide carousel, the following structure must be followed.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;slider-wrapper&quot;&gt;
+    &lt;div class=&quot;SLIDER_TYPE owl-carousel SECONDARY_CLASS&quot;&gt;
+        &lt;div class=&quot;item&quot;&gt;&lt;!--Add your content here. Duplicate to create new slide--&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--Controls go here--&gt;
+&lt;/div&gt;</pre>
+<p>
+	The above structure will generate a slider. Duplicate line 2 to create more slides.&nbsp;</p>
+<p>
+	On line 1, replace&nbsp;<strong>SLIDER_TYPE</strong> with&nbsp;<strong>single-slider</strong> to create a single slide carousel or&nbsp;<strong>double-slider</strong> to create a 2 slide carousel. You can add dots under the slider by simply adding&nbsp;<strong>owl-no-dots</strong> to remove them or<strong> owl-dots-over</strong> to show them over the image or&nbsp;<strong>owl-dots-under&nbsp;</strong>to show the dots under the the slider.</p>
+<p>
+	<strong>Creating a Single Slider or Double Slider with Arrows</strong></p>
+<p>
+	To add arrows to your slider, all you have to do is add the following code under your slider</p>
+<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;prev-slide round-large bg-highlight left-20&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;next-slide round-large bg-highlight right-20&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;</pre>
+<p>
+	These arrows are generated using secondary classes, so you can change their color and position and icon with great ease.</p>
+<p>
+	If you are looking for advanced functionallity for our slider check out the OwlCarousel 2.3 Documentation (&nbsp;https://owlcarousel2.github.io/OwlCarousel2/demos/demos.html ) - you&#39;ll find all there is to know about the slider including it&#39;s API for advanced use.</p>
+<p>
+	&nbsp;</p>
+<div>
+	&nbsp;</div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="charts_and_graphs">
+	<div class="page-header"><h3>Charts and Graphs</h3><hr class="notop"></div>
+<p>
+	For charts and graphs we use the most powerful plugin on earth. It would have been pointless for us to even try and build something that comes close to&nbsp;<strong>chats.js</strong></p>
+<p>
+	This plugin is a monster, filled with options, features and everything you&#39;ll ever need to create the most accurate and powerful charts ever.&nbsp;</p>
+<p>
+	Check out their page (&nbsp;https://www.chartjs.org/ ). It&#39;s filled with example and a great documentation.</p>
+</section>
+<section id="chips">
+	<div class="page-header"><h3>Chips</h3><hr class="notop"></div>
+<p>
+	Chips are a simple and tiny component popular on Android Devices. We&#39;ve created a few for you and they are really easy to use and customize.</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Chip with Icon or Background Image</strong></p>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;chip chip-small bg-gray1-dark&quot;&gt;
+    &lt;i class=&quot;fa fa-check bg-green1-dark&quot;&gt;&lt;/i&gt;
+    &lt;span class=&quot;color-black&quot;&gt;All good&lt;/span&gt;
+&lt;/a&gt;    </pre>
+	<p>
+		Line 1 is the chip itself. Replace&nbsp;<strong>chip-small&nbsp;</strong>with&nbsp;<strong>chip-medium&nbsp;</strong>or&nbsp;<strong>chip-large</strong> to change the chip size. You can also replace the color to make it suit your needs.</p>
+	<p>
+		Line 2 is the icon of the chip.&nbsp;</p>
+	<div>
+		Line 3 is the text of the chip.&nbsp;</div>
+</div>
+<p>
+	If you want to use an image instead of an icon simply replace line 2 with a small image</p>
+<pre class="prettyprint lang-html linenums">
+&lt;img src=&quot;images/pictures/21t.jpg&quot; alt=&quot;img&quot;&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="columns">
+	<div class="page-header"><h3>Columns</h3><hr class="notop"></div>
+<p>
+	Our product supports up to 3 colums. Considering there are devices that still have screens that are 320 pixels wide, adding 4 columns can lead to a bad experience on these devices.&nbsp;</p>
+<p>
+	<strong>Creating Two Columns</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;one-half&quot;&gt;
+   &lt;!-- Content 1/2 Here--&gt;
+&lt;/div&gt;
+&lt;div class=&quot;one-half last-column&quot;&gt;
+   &lt;!--Content 2/2 Here--&gt;
+&lt;/div&gt;
+&lt;/div class=&quot;clear&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Creating Three Columns</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;one-third&quot;&gt;
+    &lt;!--Content 1/3 Here--&gt;
+&lt;/div&gt;
+&lt;div class=&quot;one-third&quot;&gt;
+    &lt;!--Content 2/3 Here--&gt;
+&lt;/div&gt;
+&lt;div class=&quot;one-third last-column&quot;&gt;
+    &lt;!--Content 3/3 Here--&gt;
+&lt;/div&gt;
+&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</pre>
+</section>
+<section id="device_detection">
+	<div class="page-header"><h3>Device Detection</h3><hr class="notop"></div>
+<p>
+	With device detection you can show and hide content for specific devices only. We can detect iOS or Android devices and show content only for them.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Showing Content only for iOS</strong></p>
+<p>
+	To show any element only on iOS just add the class&nbsp;<strong>show-ios</strong> to it</p>
+<p>
+	<strong>Showing Content only for Android</strong></p>
+<p>
+	To show any element only on Android just add the class&nbsp;<strong>show-android</strong> to it</p>
+<p>
+	<strong>Showing Content on Non-iOS / Non-Android Devices</strong></p>
+<p>
+	If a user visits from a device that is not Android or not iOS and you want to show them the content only on that device, just add the class&nbsp;<strong>show-no-device</strong> to your element.</p>
+</section>
+<section id="dividers">
+	<div class="page-header"><h3>Dividers</h3><hr class="notop"></div>
+<p>
+	<strong>Basic Dividers</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;divider&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	<strong>Background Color Divider</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;divider bg-red1-dark opacity-50&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	<b>Icon Divider</b></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;divider-icon bg-red1-dark&quot;&gt;&lt;i class=&quot;fa fa-times&quot; color-red2-dark&quot;&gt;&lt;/i&gt;&lt;/div&gt;</pre>
+</section>
+<section id="dropdowns">
+	<div class="page-header"><h3>Dropdowns</h3><hr class="notop"></div>
+<p>
+	<b>Dropdowns</b></p>
+<p>
+	Dropdowns work on the same pricinple as accordions, using the&nbsp;<strong>data-dropdown=&quot;dropdown-1&quot;</strong> match the&nbsp;<strong>id=&quot;dropdown-1&quot;</strong> of the content to show and hide content. The difference is that accordions are dependant of on another. Meaning, if you open an accordion, then other will close.</p>
+<p>
+	In the case of dropdowns, they all appear as closed, and when you tap one it will open. Tapping another one will open that as well while&nbsp;<strong>not</strong> closing the previous one.</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;
+    &lt;a href=&quot;#&quot; data-dropdown=&quot;dropdown-1&quot; class=&quot;dropdown-style-1 SECONDARY_CLASS&quot;&gt;
+        &lt;i class=&quot;fa fa-share-alt color-red1-light&quot;&gt;&lt;/i&gt;
+        &lt;p class=&quot;color-theme&quot;&gt;Social&lt;/p&gt;
+        &lt;i class=&quot;fa dropdown-icon fa-angle-down color-theme&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+
+    &lt;div class=&quot;dropdown-content&quot; id=&quot;dropdown-1&quot;&gt;
+        &lt;!--Dropdown Content Here--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	If you wish to use colored accordions simply replace <b>dropdown-style-1&nbsp;</b>with&nbsp;<strong>dropdown-style-2</strong> and replace&nbsp;<strong>SECONDARY_CLASS</strong>&nbsp;with a background color of your choosing.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="header_logos">
+	<div class="page-header"><h3>Header & Logos</h3><hr class="notop"></div>
+<p>
+	Our products come with a powerful header that will allow you to choose it&#39;s desing by simply replacing one class. Headers support&nbsp;<strong>text logos&nbsp;</strong>and&nbsp;<strong>image logos</strong> and these are replaced with incredible ease.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	Let&#39;s first explain the header styles and then we&#39;ll explain where you can change your logo. If you want to skip this step, just scroll down a bit.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;header HEADER-POSITION HEADER-STYLE&quot;&gt;
+   &lt;a href=&quot;#&quot; class=&quot;header-title&quot;&gt;Fonts&lt;/a&gt;
+   &lt;a href=&quot;#&quot; class=&quot;header-icon header-icon-1&quot;&gt;&lt;i class=&quot;fas fa-arrow-left&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;a href=&quot;#&quot; class=&quot;header-icon header-icon-2&quot;&gt;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;a href=&quot;#&quot; class=&quot;header-icon header-icon-3&quot;&gt;&lt;i class=&quot;fas fa-cog&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+   &lt;a href=&quot;#&quot; class=&quot;header-icon header-icon-4&quot;&gt;&lt;i class=&quot;fas fa-moon&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+<p>
+	This is the header. It supports a tone of styles, so let&#39;s explain each of them</p>
+<p>
+	Line 1 has the main header class.</p>
+<p>
+	Replace&nbsp;<strong>HEADER-POSITION&nbsp;</strong>with:</p>
+<p>
+	<strong>header-fixed&nbsp;</strong>- for a fixed header that will stay sticky at the top.</p>
+<p>
+	<strong>header-static&nbsp;</strong>- for a static header that will scroll with the page.&nbsp;<strong>NOTE</strong> if you want a static header you will have to move the header inside the&nbsp;<strong>page-content</strong> class. Currently, the header is always placed outside the&nbsp;<strong>page-content</strong> class.</p>
+<p>
+	Replace <b>HEADER-STYLE</b>&nbsp;with:</p>
+<p>
+	<strong>header-logo-app</strong> will have an icon, the logo or title and 3 icons on the right</p>
+<p>
+	<strong>header-logo-left</strong> will have the logo at the left and 4 icons on the right</p>
+<p>
+	<strong>header-logo-center&nbsp;</strong>will have the logo in the center and 2 icons on the left side and 2 icons on the right</p>
+<p>
+	<strong>header-logo-right</strong> will have 4 icons on the left and the logo on the right.</p>
+<p>
+	Line 2 is the header title. You can replace&nbsp;<strong>header-title</strong> with <b>header-logo</b> to use a logo image instead of the text.&nbsp;</p>
+<p>
+	Lines 3, 4, 5, 6 are the header icons. These have the class <b>header-icon&nbsp;</b>and&nbsp;<strong>header-icon-1 / header-icon-2 / header-icon-3&nbsp;</strong>or&nbsp;<strong>header-icon-4</strong>. The icons will adapt depending on the&nbsp;<strong>HEADER-STYLE</strong></p>
+<p>
+	&nbsp;</p>
+<p>
+	<b>How do I make the header transparent, like the coverpage and walkthroughts?</b></p>
+<p>
+	Just add the class&nbsp;<strong>header-transaprent</strong> to your header. And the header will automatically be transaprent.</p>
+<p>
+	&nbsp;</p>
+<h3>
+	<strong>How do I set my own logo?</strong></h3>
+<p>
+	It&#39;s very simple. Just open style.css and at the very top you&#39;ll see all the images for the logos. Replace the image there with your own and set the background-size to&nbsp;<strong>half of your logo</strong> to maintin retina aspect. So if your logo is 100x50 pixels as an image file you will set background-size:50px 25px.&nbsp;</p>
+<p>
+	The same principle applies for the menu where you can change <strong>nav-title</strong> with <strong>nav-logo</strong>. and the footer where you can relace <strong>footer-title</strong> with <strong>footer-logo</strong></p>
+<p>
+	&nbsp;</p>
+<div>
+	&nbsp;</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="inputs">
+	<div class="page-header"><h3>Inputs</h3><hr class="notop"></div>
+<p>
+	Input use the default code any HTML input has had since the beginning of time. Just copy paste the div housing the input you want and you&#39;re ready to go.&nbsp;</p>
+<p>
+	If you wisht to modify the validation, we are using REGEX to validate the fields of the input clases, you can find these in custom.js by using CTRL+F or CMD+F and searching for&nbsp;<strong>validator</strong>.&nbsp;</p>
+</section>
+<section id="link_list">
+	<div class="page-header"><h3>Link List</h3><hr class="notop"></div>
+<p>
+	Link Lists are the best way to showcase external or interal links on your page. We&#39;ve created 3 awesome styles.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Link List Style 1</strong></p>
+<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;link-list link-list-1&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;i class=&quot;fa fa-star color-yellow1-dark&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Ultra Mobile&lt;/span&gt;
+            &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;</pre>
+<div>
+	Contains 1 icon on the left, a text and an icon on the right. Simply duplicate lines 2 to 6 to create more items. You can add the class&nbsp;<strong>no-border</strong> to the last item of your list to remove the bottom border if you wish to add a divider at the bottom.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<b>Link List Style 2</b></div>
+<div>
+	&nbsp;</div>
+<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;link-list link-list-2 link-list-long-border&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;i class=&quot;fa fa-star color-yellow1-dark&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Ultra Mobile&lt;/span&gt;
+            &lt;strong&gt;Flexible, Fast, and Very Powerful&lt;/strong&gt;
+            &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;</pre>
+<p>
+	Contains 1 icon on the left, a title, a small text and an icon on the right. Duplicate lines 2 to 7 to create more items. You can add the class&nbsp;<strong>no-border</strong>&nbsp;to the last item of your list to remove the bottom border if you wish to add a divider at the bottom.&nbsp;</p>
+<p>
+	<strong>Link List Style 3</strong></p>
+<pre class="prettyprint lang-html linenums">
+            &lt;div class=&quot;link-list link-list-3&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;round-small shadow-tiny&quot;&gt;
+                    &lt;i class=&quot;fa fa-mobile color-blue2-dark&quot;&gt;&lt;/i&gt;
+                    &lt;span&gt;Ultra Mobile&lt;/span&gt;
+                    &lt;strong&gt;Flexible, Fast, and Very Powerful&lt;/strong&gt;
+                    &lt;em class=&quot;color-green1-dark&quot;&gt;Online&lt;/em&gt;
+                    &lt;i class=&quot;fa fa-check-circle color-green1-dark&quot;&gt;&lt;/i&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;           </pre>
+<div>
+	This link list is boxed. To create more items you&#39;ll have to duplicate the entire code. This also allows setting rounded corners, shadows and an icon on the right with a small text under it. We&#39;re currently using this on the <b>System Status Page.</b></div>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="notifications_alerts">
+	<div class="page-header"><h3>Notifications & Alerts</h3><hr class="notop"></div>
+<p>
+	Let&#39;s start with the default Alert boxes. These are very easy to use and exaplain.&nbsp;</p>
+<p>
+	<b>Alert Small</b></p>
+<pre class="prettyprint lang-html linenums">
+            &lt;div class=&quot;alert alert-small alert-round-medium bg-yellow1-dark&quot;&gt;
+                &lt;i class=&quot;fa fa-exclamation-triangle&quot;&gt;&lt;/i&gt;
+                &lt;span&gt;Please check back later.&lt;/span&gt;
+                &lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;
+</pre>
+<div>
+	&nbsp;</div>
+<div>
+	This will create a small alert box. Replace your color, text and icon as you need them. You can change the corners with&nbsp;<strong>alert-round-medium / alert-round-small / alert-round-large</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Alert Large</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+            &lt;div class=&quot;alert alert-large alert-round-medium bg-yellow1-dark&quot;&gt;
+                &lt;i class=&quot;fa fa-exclamation-triangle&quot;&gt;&lt;/i&gt;
+                &lt;strong class=&quot;uppercase ultrabold&quot;&gt;Warning&lt;/strong&gt;
+                &lt;span&gt;Something might go wrong.&lt;/span&gt;
+                &lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;
+            &lt;/div&gt;   </pre>
+	<div>
+		This will create a large alert box. Again, you can replace the color, text and icon as you need and you can use&nbsp;<strong>alert-round-medium / alert-round-small / alert-round-large</strong>&nbsp;for rounding the corners.</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Notification Styles</strong></div>
+	<div>
+		&nbsp;</div>
+	<p>
+		We created a few notification styles that match the design of iOS / Material and Android Design. These are very easy to use and require minimal effort to setup.&nbsp;</p>
+	<p>
+		Let&#39;s explain their basic principle of functioning, and then, we&#39;ll show you the code you&#39;ll have to add&nbsp;</p>
+	<p>
+		<strong>How to triggere Notifications?</strong></p>
+	<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; data-notification=&quot;notification-1&quot;&gt;Show Notification&lt;/a&gt;</pre>
+	<div>
+		&nbsp;</div>
+	<div>
+		This is the trigger for the notification. Notice that we are using&nbsp;<strong>data-notification=&quot;notification-1&quot;</strong> This will have to match with our notification that will have&nbsp;<strong>id=&quot;notification-1</strong>&quot; be sure if you are using multiple items to give each a unique name.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div class="alert alert-error">
+		The following elements must be placed outside the page-content</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Notification iOS</strong></div>
+	<div>
+		<pre class="prettyprint lang-html linenums">
+    &lt;div id=&quot;notification-1&quot; class=&quot;notification-style notification-ios bg-dark1-dark&quot;&gt;
+        &lt;span class=&quot;notification-icon&quot;&gt;
+            &lt;i class=&quot;fa fa-bell&quot;&gt;&lt;/i&gt;
+            &lt;em&gt;Enabled&lt;/em&gt;
+            &lt;i class=&quot;fa fa-times-circle&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+
+        &lt;h1 class=&quot;font-15&quot;&gt;All Good&lt;/h1&gt;
+        &lt;p&gt;
+            I&#39;m a notification. I show at the top or bottom of the page.
+        &lt;/p&gt;
+    &lt;/div&gt;
+</pre>
+	</div>
+	<div>
+		Replace the content inside with your notification content and place this outside the page-content. Be sure the&nbsp;<strong>id=&quot;notification-1&quot;&nbsp;</strong>is identical to the&nbsp;<strong>data-notification=&quot;notification-1&quot;</strong> otherwise the notification will not show.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		<strong>Notification Android&nbsp;</strong></div>
+	<div>
+		<pre class="prettyprint lang-html linenums">
+    &lt;div id=&quot;notification-2&quot; class=&quot;notification-style notification-android bg-dark1-dark&quot;&gt;
+        &lt;i class=&quot;fa fa-check bg-green1-dark&quot;&gt;&lt;/i&gt;
+        &lt;h1 class=&quot;font-15&quot;&gt;All Good&lt;/h1&gt;
+        &lt;strong&gt;Time&lt;/strong&gt;
+        &lt;p&gt;
+            I&#39;m a notification. I show at the top of the page. Awesome stuff here!
+        &lt;/p&gt;
+        &lt;div class=&quot;notification-buttons&quot;&gt;
+            &lt;div class=&quot;one-half&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;Find out More&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;one-half&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;Download&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;    </pre>
+		<div>
+			<div>
+				Replace the content inside with your notification content and place this outside the page-content. Be sure the&nbsp;<strong>id=&quot;notification-2&quot;&nbsp;</strong>is identical to the&nbsp;<strong>data-notification=&quot;notification-2&quot;</strong>&nbsp;otherwise the notification will not show.&nbsp;</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>Notification Material</strong></div>
+			<pre class="prettyprint lang-html linenums">
+    &lt;div id=&quot;notification-3&quot; class=&quot;notification-style notification-material bg-dark1-dark&quot;&gt;
+        &lt;span class=&quot;notification-icon&quot;&gt;
+            &lt;i class=&quot;fa fa-comment color-green1-light&quot;&gt;&lt;/i&gt;
+            &lt;em class=&quot;color-green1-light&quot;&gt;Hangouts&lt;/em&gt;
+            &lt;strong&gt;Messenger&lt;/strong&gt;
+        &lt;/span&gt;
+        &lt;img src=&quot;images/pictures/0t.jpg&quot;&gt;
+        &lt;h1 class=&quot;font-15&quot;&gt;John Doe&lt;/h1&gt;
+        &lt;p&gt;
+            I&#39;m a notification. I show at the top of the page.
+        &lt;/p&gt;
+    &lt;/div&gt;</pre>
+			<div>
+				<div>
+					Replace the content inside with your notification content and place this outside the page-content. Be sure the&nbsp;<strong>id=&quot;notification-3&quot;&nbsp;</strong>is identical to the&nbsp;<strong>data-notification=&quot;notification-3&quot;</strong>&nbsp;otherwise the notification will not show.&nbsp;</div>
+				<div>
+					&nbsp;</div>
+			</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				You can create infinite notification elements, just be sure that each of them has a unique&nbsp;<strong>id=&quot;notification-UNIQUE&quot;</strong> and it matches the&nbsp;<strong>data-notification=&quot;notification-UNIQUE&quot;</strong> Otherwise they will not show.&nbsp;</div>
+		</div>
+	</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		&nbsp;</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="offline_detection">
+	<div class="page-header"><h3>Offline Detection</h3><hr class="notop"></div>
+<p>
+	Our item can detect if you don&#39;t have an internet connection. This is great if you plan on using it as a PWA. You can locate this code by opening custom.js and using CTRL+F or CMD+F to find&nbsp;<strong>offline-message</strong> there you will find 2 messages that show that you can modify to suit you text.</p>
+</section>
+<section id="preloaders">
+	<div class="page-header"><h3>Preloaders</h3><hr class="notop"></div>
+<p>
+	When entering a page you will see a preloader. This is set by the top class in the page&nbsp;</p>
+<p>
+	&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div id=&quot;page-preloader&quot;&gt;
+    &lt;div class=&quot;loader-main&quot;&gt;&lt;div class=&quot;preload-spinner border-highlight&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+<div>
+	&nbsp;</div>
+<div>
+	To change the color of your preloader simply replace&nbsp;<strong>boder-highlight&nbsp;</strong> with&nbsp;<strong>border-COLOR&nbsp;</strong>using the colors available in the&nbsp;<strong>Secondary Classes&nbsp;</strong>chapter. You can change the size of the preloader to make it thicker or thinner by adding the classes&nbsp;</div>
+<div>
+	&nbsp;</div>
+<ul>
+	<li>
+		preload-small - for thin borders</li>
+	<li>
+		preload-medium - for default preloader&nbsp;</li>
+	<li>
+		preload-large - for thick borders&nbsp;</li>
+</ul>
+</section>
+<section id="pricing_tables">
+	<div class="page-header"><h3>Pricing Tables</h3><hr class="notop"></div>
+<p>
+	The pricing tables can be found in the component-pricing.html page. You can simply copy and paste the table you wish and replace the content, icons and colors usingthe secondary classes found in the&nbsp;<strong>Secondary Classes&nbsp;</strong>chapter.&nbsp;</p>
+<p>
+	These can be added inside a&nbsp;<strong>single-slider</strong> as seen in the example on the page and explained in the&nbsp;<strong>Carousel&nbsp;</strong>chapter.</p>
+</section>
+<section id="quotes_reviews">
+	<div class="page-header"><h3>Quotes & Reviews</h3><hr class="notop"></div>
+<p>
+	The same applies to this as the pricing talbes. There&#39;s really not much to explain. Simply copy and paste the block you like and replace the content with your own.&nbsp;</p>
+</section>
+<section id="reading_progress">
+	<div class="page-header"><h3>Reading Progress</h3><hr class="notop"></div>
+<p>
+	To add a reading progress bar simply place the following code outside of your <strong>page-content</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;bg-highlight&quot; id=&quot;reading-progress-bar&quot;&gt;&lt;/div&gt;
+</pre>
+<div>
+	This will appear right under the header. You can replace the bg-highlight class with any color you wish from the&nbsp;<strong>Secondary Classes&nbsp;</strong>chapter.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	To add reading progress to any content, you must add the following structure&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;content&quot; id=&quot;reading-progress-text&quot;&gt;
+        &lt;h3 class=&quot;bolder&quot;&gt;Start Scrolling&lt;/h3&gt;
+        &lt;p&gt;
+            By &lt;strong class=&quot;color-highlight&quot;&gt;Enabled&lt;/strong&gt; -
+            &lt;strong class=&quot;reading-progress-time color-highlight&quot;&gt;&lt;/strong&gt; minutes -
+            &lt;strong class=&quot;reading-progress-words color-highlight&quot;&gt;&lt;/strong&gt; words.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Add your text here
+        &lt;/p&gt;
+    &lt;/div&gt;
+</pre>
+</div>
+</section>
+<section id="search">
+	<div class="page-header"><h3>Search</h3><hr class="notop"></div>
+<p>
+	When we made the search component we thought about all our users that don&#39;t want to connect the item to a database, but wanted to have a hidden search list.&nbsp;</p>
+<p>
+	To use our search is very simple. There&#39;s a basic structure that must be followed.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;search-box search-color bg-dark1-dark shadow-tiny round-large bottom-20&quot;&gt;
+        &lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;Search here.. - try the word demo &quot; data-search&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;search-results disabled-search-list&quot;&gt;
+        &lt;!--Search Items will be added here--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	Wrap everything inside a content class on line 1.&nbsp;</p>
+<p>
+	Line 2 is the search box. You can change the background color, shadow and borders by updating the secondary classes.&nbsp;</p>
+<p>
+	Line 3 is the seach icon</p>
+<p>
+	Line 4 is the search field. This has the data-search attribute. It must be added there.&nbsp;</p>
+<p>
+	Line 5 closes the search input</p>
+<p>
+	Line 7 is the search results. This must have the class&nbsp;<strong>search-results disabled-search-list</strong></p>
+<p>
+	Inside line 9 we will be adding our search results.&nbsp;</p>
+<p>
+	Line 10 closes the search</p>
+<p>
+	Line 11 closes the content wrapper.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	Now, on line 9, we will add the&nbsp;items that must look like the following code.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div data-filter-item data-filter-name=&quot;all keyword&quot;&gt;&lt;!--add your content here--&gt;&lt;/div&gt;</pre>
+<p>
+	This is a search result that will appear if you type&nbsp;<strong>all</strong> or&nbsp;<strong>keyword</strong> in the search box. You can add any value you want inside the&nbsp;<strong>data-filter-name</strong> and these will show up when the user types. Simply add any content you want inside this element and give it the&nbsp;<strong>data-filter-name</strong> you want.&nbsp;</p>
+<p>
+	Duplicate it and create as many search results as you want.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="sharing">
+	<div class="page-header"><h3>Sharing</h3><hr class="notop"></div>
+<p>
+	We created a system of classes that will allow you to automatically share the page you are currently on by adding a simple class to it. Just add the following class to the item you want to activate sharing for&nbsp;</p>
+<p>
+	&nbsp;</p>
+<ul>
+	<li>
+		<strong>shareToFacebook</strong> - when tapped, shares to Facebook</li>
+	<li>
+		<strong>shareToTwitter</strong> - when tapped, shares to Twitter</li>
+	<li>
+		<strong>shareToGooglePlus</strong> - when tapped, shares to Google+</li>
+	<li>
+		<strong>shareToPinterest</strong> - when tapped, shares to Pinterest</li>
+	<li>
+		<strong>shareToWhatsApp</strong> - when tapped, shares to WhatsApp</li>
+	<li>
+		<strong>shareToMail</strong> - when tapped, shares to Mail&nbsp;</li>
+</ul>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="snackbars">
+	<div class="page-header"><h3>Snackbars</h3><hr class="notop"></div>
+<p>
+	Shackbars are small notifications that show up from the bottom of the page. These can be activated manually, by adding them above the page-content class or triggered automatically by adding them to any button or link you want.&nbsp;</p>
+<p>
+	Automatic snackbars are useful for callbacks, when you want a message to show when you tap a button.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	On any page you have snackbars, outside the page-content you must add the following code</p>
+<pre class="prettyprint lang-html linenums">
+    &lt;div class=&quot;snackbars snackbars-boxed snackbar-round&quot;&gt;
+        &lt;!-- Only manual snackbars get added here--&gt;
+    &lt;/div&gt;</pre>
+<div>
+	<strong>Automatic Snackbars</strong></div>
+<p>
+	Let&#39;s say you have a link, that you want to show a snackbar when you tap. Then, we&#39;d use the following code</p>
+<pre class="prettyprint lang-html linenums">
+                &lt;a href=&quot;#&quot;
+                   data-snack-id=&quot;snack-1&quot;
+                   data-snack-color=&quot;bg-highlight color-white&quot;
+                   data-snack-text=&quot;I&#39;m the color of the page highlight!&quot;
+                   data-snack-icon=&quot;fa fa-check&quot;&gt;
+                       I will show a SnackBar
+                &lt;/a&gt;    </pre>
+<div>
+	Line 1 opens the anchor</div>
+<div>
+	Line 2 is a unique identifier for your snackbar. Each snackbar must have a unique number here</div>
+<div>
+	Line 3 is the color. You can use the secondary class names here</div>
+<div>
+	Line 4 is the text you want the snackbar to show</div>
+<div>
+	Line 5 is the icon that will appear on the right side of your snackbar</div>
+<div>
+	Line 6 is the link text. You will only see this element on screen before tapping it</div>
+<div>
+	Line 7 closes the snackbar.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Manual Snackbars.</strong></div>
+<div>
+	Manual snackbars must be placed outside the page-content class.&nbsp; The following code must be added inside the box mentioned earlier.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;bg-blue2-dark&quot; id=&quot;snackbar-manual-1&quot;&gt;&lt;i class=&quot;fa fa-sync fa-spin&quot;&gt;&lt;/i&gt;Just a second...&lt;/a&gt;</pre>
+	<div>
+		This code will be your snackbar. Notice it has the&nbsp;<strong>id=&quot;snackbar-manual-1&quot;</strong> this id must be unique and corespond to the&nbsp;<strong>data-snack-manual-id=&quot;manual-1&quot;</strong> to show the snackbar. It works on the same principle as the dropdowns and accordions.&nbsp;</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="tabs">
+	<div class="page-header"><h3>Tabs</h3><hr class="notop"></div>
+<p>
+	Tabs are very simple to work. They rely on the same principle as the accordions, dropdowns and snackbars, using data attribute to match an ID. Let&#39;s explain&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;
+    &lt;div class=&quot;tab-controls tab-animated tabs-small tabs-rounded&quot;
+         data-tab-items=&quot;4&quot;
+         data-tab-active=&quot;bg-highlight&quot;&gt;
+
+        &lt;a href=&quot;#&quot; data-tab-active data-tab=&quot;tab-1&quot;&gt;Tab 1&lt;/a&gt;
+        &lt;a href=&quot;#&quot; data-tab=&quot;tab-2&quot;&gt;Tab 2&lt;/a&gt;
+        &lt;a href=&quot;#&quot; data-tab=&quot;tab-3&quot;&gt;Tab 3&lt;/a&gt;
+        &lt;a href=&quot;#&quot; data-tab=&quot;tab-4&quot;&gt;Tab 4&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;tab-content&quot; id=&quot;tab-1&quot;&gt;
+        &lt;!--Tab Content 1--&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab-content&quot; id=&quot;tab-2&quot;&gt;
+        &lt;!--Tab Content 2--&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab-content&quot; id=&quot;tab-3&quot;&gt;
+        &lt;!--Tab Content 3--&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;tab-content&quot; id=&quot;tab-4&quot;&gt;
+        &lt;!--Tab Content 4--&gt;
+    &lt;/div&gt;
+&lt;/div&gt;  </pre>
+<p>
+	Line 1 wrapps the tabs inside a content box. This is required.</p>
+<p>
+	Line 2 is the tab controls housing box. This has the mandatory&nbsp;<strong>tab-controls&nbsp;</strong>and&nbsp;<strong>tab-animated</strong> clases which are used by javascript and you can replace&nbsp;<strong>tabs-small</strong> with&nbsp;<strong>tabs-medium</strong> or&nbsp;<strong>tabs-large</strong> to change the size of the tabs and also, if you remove&nbsp;<strong>tabs-rounded</strong> they will become square.</p>
+<p>
+	Line 3 is the number of tabs you want to have on. We&#39;re using 4 in this example</p>
+<p>
+	Line 4 is the background color of the selected tab. We&#39;re using highlight in this example but you can use any color you want from the secondary classes.&nbsp;</p>
+<p>
+	Line 6,7,8,9, are the tab buttons that get tapped to change the tab. add&nbsp;<strong> data-tab-active</strong> to the tab you want to have activated by default.<strong>&nbsp;</strong></p>
+<p>
+	Notice that all of these have&nbsp;<strong>data-tab=&quot;tab-NUMBER&quot;</strong> that match with the&nbsp;<strong>id=&quot;tab-NUMBER&quot;</strong>&nbsp;You can create however many tabs you wish, just remember that these will appear on a small screen and that the must have the same data-tab and id.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="toasts">
+	<div class="page-header"><h3>Toasts</h3><hr class="notop"></div>
+<p>
+	Toats, like snackbars support dyanmic creation of them per any element you wish.</p>
+<p>
+	On any page that you will have toasts present you must add the following code&nbsp;<strong>outside of the page-content</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;toasts&quot;&gt;&lt;!-- insert your manual toasts here --&gt;&lt;/div&gt;</pre>
+<p>
+	&nbsp;</p>
+<p>
+	<strong>Manual Toats</strong></p>
+<p>
+	To deploy a manual toast, you must add&nbsp;<strong>data-toast-manual-id=&quot;toast-manual-1&quot;</strong> to the element that you want to show a toast when tapped. Please remember that the&nbsp;<strong>data-toast-manual-id=&quot;toast-manual-1&quot;&nbsp;</strong>must be the same with the&nbsp;<strong>id=&quot;toast-manual-1&quot;</strong> of the toast you wish to target</p>
+<p>
+	Now, add the toast you want inside the &lt;div class=&quot;toasts&quot;&gt; you created outside of the page-content.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+        &lt;div class=&quot;toast toast-top&quot; id=&quot;toast-manual-1&quot;&gt;
+            &lt;p class=&quot;color-white&quot;&gt;&lt;i class=&#39;fa fa-sync fa-spin right-10&#39;&gt;&lt;/i&gt; Processing... &lt;/p&gt;
+            &lt;div class=&quot;toast-bg opacity-90 bg-blue2-dark&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;        </pre>
+<div>
+	Replace&nbsp;<strong>toast-top</strong> with&nbsp;<strong>toast-bottom</strong> if you want them to appear from the bottom of the screen. You can also replace the icon, text and background color by using secondary classes.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Auatomatic Toast</strong></div>
+<div>
+	Automatic toast get composed while writting the tap element. Let&#39;s say you want a link to show a snackbar when you tap it.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+                &lt;a href=&quot;#&quot;
+                   data-toast-text=&quot;&lt;i class=&#39;fa fa-check right-10&#39;&gt;&lt;/i&gt; Great Success&quot;
+                   data-toast-position=&quot;top&quot;
+                   data-toast-bg=&quot;bg-green1-dark&quot;
+                   data-toast-id=&quot;toast-10&quot;&gt;
+                   I will show a toast box.
+                &lt;/a&gt;         </pre>
+	<div>
+		Line 1 is the anchor</div>
+	<div>
+		Line 2 is the toast text. We add the icon as well</div>
+	<div>
+		Line 3 is the position, this can be&nbsp;<strong>top</strong> or <b>bottom</b></div>
+	<div>
+		Line 4 is the background-color&nbsp;</div>
+	<div>
+		Line 5 is the toast id. Remember to give it a unique number.</div>
+</div>
+<p>
+	&nbsp;</p>
+</section>
+<section id="toggles">
+	<div class="page-header"><h3>Toggles</h3><hr class="notop"></div>
+<p>
+	One of the biggest requests our customers had were mobile styled toggles. And these always required fine tuning for each customer preference, so we made the flexible to the point where you can design it to fit whatever need you have.&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	Toggles have 2 main styles. iOS Design and Android Design. Let&#39;s explain&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	<b>iOS Design</b></p>
+<pre class="prettyprint lang-html linenums">
+    &lt;a href=&quot;#&quot; class=&quot;toggle-switch toggle-ios toggle-off&quot;
+       data-toggle-height=&quot;30&quot;
+       data-toggle-width=&quot;55&quot;
+       data-toggle-content=&quot;toggle-content-1&quot;
+       data-toggle-checkbox=&quot;toggle-checkbox-1&quot;
+       data-icons-size=&quot;9&quot;
+       data-bg-on=&quot;bg-green1-dark&quot;
+       data-bg-off=&quot;bg-red2-dark&quot;&gt;
+        &lt;span class=&quot;color-theme regularbold font-14&quot;&gt;iOS Toggle Style 2&lt;/span&gt;
+        &lt;strong&gt;&lt;/strong&gt;
+        &lt;i class=&quot;fa-t1 fa fa-check&quot;&gt;&lt;/i&gt;
+        &lt;i class=&quot;fa-t2 fa fa-times&quot;&gt;&lt;/i&gt;
+        &lt;u&gt;&lt;/u&gt;
+    &lt;/a&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;toggle-checkbox-1&quot;&gt;
+    &lt;div class=&quot;toggle-content&quot; id=&quot;toggle-content-1&quot;&gt;
+        &lt;!--This will be your toggle content--&gt;
+    &lt;/div&gt;   </pre>
+<div>
+	&nbsp;</div>
+<div>
+	Let&#39;s explain line by line.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Line 1. Is the toggle itself. You can replace&nbsp;<strong>toggle-off</strong> with&nbsp;<strong>toggle-on</strong> to have it activated by default</div>
+<div>
+	Line 2 is the toggle height. Value in pixels</div>
+<div>
+	Line 3 is the toggle width. Value in pixels.</div>
+<div>
+	Line 4 is the&nbsp;id that you want to show. This value will be added to the toggle-content class at the bottom of the code</div>
+<div>
+	Line 5 is the checkbox you want to tick. This value will be added the input type=&quot;checkbox&quot; at the bottom of the code.</div>
+<div>
+	Line 6 is the icon font size in case you want to use icons under the buttons</div>
+<div>
+	Line 7 is the background color when the toggle is active</div>
+<div>
+	Line 8 is the background color when the toggle is inactive</div>
+<div>
+	Line 9 is the text that will appear on the toggle.&nbsp;</div>
+<div>
+	Line 10 is the ball of the toggle. Leave the strong there empty as shown</div>
+<div>
+	Line 11 is the icon for the active state</div>
+<div>
+	Line 12 is the icon for the inactive state</div>
+<div>
+	Line 13 is the background of the toggle</div>
+<div>
+	Line 14 closes the toggle.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	That&#39;s it. You can change all these values to use the toggle with any design you want. If you don&#39;t wish to use icons in the toggle, simply delete lines 11 and 12.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Line 15 is the checkbox for the toggle. If you plan on using the toggle as checkbox, add this value here. If you want the checkbox to be invisible just add the class&nbsp;<strong>opacity-0&nbsp;</strong>to this checkbox.&nbsp;</div>
+<div>
+	Line 16 is the content for the toggle. This will show and hide depending on the toggle. This must have the class toggle-checkbox.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	Both Lines 15 and Lines 16&nbsp;<strong>must have the same id=&quot;toggle-checkbox-NUMBER&quot;&nbsp;</strong>or&nbsp;<strong>&quot;id=&quot;toggle-content-NUMBER&quot;</strong> as the values you add in line 4 and 5. Otherwise they will not work.&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>Android Design</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#&quot; class=&quot;toggle-switch toggle-android toggle-off&quot;
+   data-toggle-height=&quot;26&quot;
+   data-toggle-width=&quot;53&quot;
+   data-toggle-content=&quot;toggle-content-4&quot;
+   data-toggle-checkbox=&quot;toggle-checkbox-4&quot;
+   data-bg-off=&quot;bg-gray2-dark&quot;
+   data-bg-on=&quot;bg-mint-light&quot;
+   data-ball-bg=&quot;bg-mint-dark&quot;&gt;
+    &lt;span class=&quot;color-theme regularbold font-14&quot;&gt;Android Toggle Style 1&lt;/span&gt;
+    &lt;strong&gt;&lt;/strong&gt;
+    &lt;u&gt;&lt;/u&gt;
+&lt;/a&gt;
+
+&lt;input type=&quot;toggle-checkbox-4&quot;&gt;
+&lt;div class=&quot;toggle-content&quot; id=&quot;toggle-content-4&quot;&gt;
+     &lt;!-- This will be your toggle content--&gt;
+&lt;/div&gt; </pre>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	<div>
+		Line 1. Is the toggle itself. You can replace&nbsp;<strong>toggle-off</strong>&nbsp;with&nbsp;<strong>toggle-on</strong>&nbsp;to have it activated by default</div>
+	<div>
+		Line 2 is the toggle height. Value in pixels</div>
+	<div>
+		Line 3 is the toggle width. Value in pixels.</div>
+	<div>
+		Line 4 is the&nbsp;id that you want to show. This value will be added to the toggle-content class at the bottom of the code</div>
+	<div>
+		Line 5 is the checkbox you want to tick. This value will be added the input type=&quot;checkbox&quot; at the bottom of the code.</div>
+	<div>
+		Line 6 is the background color when the toggle is inactive</div>
+	<div>
+		Line 7 is the background color when the toggle is active</div>
+	<div>
+		Line 8 is the ball of the toggle, the color you wisht o have.</div>
+	<div>
+		Line 9 is the text you want to appear on the toggle</div>
+	<div>
+		Line 10 is the ball itself leave the strong there</div>
+	<div>
+		Line 11 is the background, leave the U there</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	<div>
+		That&#39;s it. You can change all these values to use the toggle with any design you want.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Line 14 is the checkbox for the toggle. If you plan on using the toggle as checkbox, add this value here. If you want the checkbox to be invisible just add the class&nbsp;<strong>opacity-0&nbsp;</strong>to this checkbox.&nbsp;</div>
+	<div>
+		Line 15 is the content for the toggle. This will show and hide depending on the toggle. This must have the class toggle-checkbox.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+	<div>
+		Both Lines 15 and Lines 14&nbsp;<strong>must have the same id=&quot;toggle-checkbox-NUMBER&quot;&nbsp;</strong>or&nbsp;<strong>&quot;id=&quot;toggle-content-NUMBER&quot;</strong>&nbsp;as the values you add in line 4 and 5. Otherwise they will not work.&nbsp;</div>
+	<div>
+		&nbsp;</div>
+</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	&nbsp;</div>
+</section>
+<section id="typography">
+	<div class="page-header"><h3>Typography</h3><hr class="notop"></div>
+<p>
+	The typography components are easy to use. Open the components-typography.html page, locate the element you wish to use and simply place it wherever you want to use it.&nbsp;</p>
+<p>
+	Secondary classes for text apply to every element here.&nbsp;</p>
+</section>
+<section id="ending">
+	<div class="page-header"><h3>Ending</h3><hr class="notop"></div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	If there is anything you don&#39;t find here, or you require clarifications for any element we have here, please open a support ticket on our forums. We will gladly help you out. Our support times are blazing fast and we are patient with any question you may have. No question is small and no question is stupid. If you feel you don&#39;t understand something, please let us know!&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	It&#39;s an imense pleasure for us to know our customers know and master our products and can place their imagination in our product to make it their own!&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	So, please, if there is anything we may help you with from our product features, or pages, let us know! We&#39;re always available for you on www.enableds.com ( the support page )&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<b>Final note!&nbsp;</b></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	We&#39;ve spent hundreds of hours building this item and trying to make the documentation as complete and awesome as possible! Please take a moment and rate our item 5 stars! It really helps us make more customers like yourself happy and give this product some exposure!&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Cheers and thank you for being an awesome buyer!&nbsp;</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	The Enabled Team.&nbsp;</p>
+<div>
+	&nbsp;</div>
+</section>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+
+<body>
+    <h1>Hello node</h1>
+    <h2>안녕하세요</h2>
+    <input type="text" id="userId" /><br>
+    <input type="text" id="password" /><br>
+    <button type="button" id="loginBtn">send Data</buttot>
+</body>
+<script>
+    $("#loginBtn").click(function () {
+        var userId = $("#userId").val();
+        var userPwd = $("#password").val();
+
+        $.ajax({
+            url: 'http://localhost:3000/sendUserData?userId=' + userId + '&password=' + userPwd,
+            type: 'GET',
+            success: function (data) {
+            alert("Send Success!!");
+            }
+
+        })
+    })
+
+</script>
+
+
+</html>
